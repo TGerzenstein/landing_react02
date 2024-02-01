@@ -1,0 +1,28 @@
+name: landingreact02
+
+proxy:
+  node:
+    - landingreact02.lndo.site:3000
+
+services:
+  node:
+    type: node:18
+    scanner: false
+    expose: true
+    ports:
+      - 3000:3000
+
+
+tooling:
+  npm:
+    service: node
+    description: Runs npm
+    cmd: npm
+  node:
+    service: node
+    description: Runs node commands
+    cmd: node    
+  npx:
+    service: npx
+    description: Runs npx commands
+    cmd: npx

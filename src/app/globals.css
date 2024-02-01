@@ -1,0 +1,47 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.box-presentation {
+ padding: 2rem 3rem;
+}
+
+.box-main {
+  width: 100%;
+  background-color: #f2f2f2;
+  display: flex;
+  justify-content: center;
+  margin: 0rem;
+  padding: 1rem 2rem;
+}
+
+.box {
+  width: 50%;
+}
+
+li {
+  color: black;
+  list-style-type: none;
+  padding: 1rem;
+}
+
+.card {
+  font-size: 1.5rem;
+  font-weight: 400;
+  border-bottom: 10px solid #0066ff;
+  padding: 1rem;
+  background-color: #ffffff;
+  box-shadow: 5px 5px 29px 0 rgba(0,0,0,0.15);
+}
+
+.email {
+  font-size: 0.875rem;
+}
+
+
+img {
+  width: 200px;
+  padding: 0.30rem 0rem;
+}
