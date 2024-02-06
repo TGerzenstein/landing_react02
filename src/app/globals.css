@@ -9,7 +9,7 @@
 }
 
 .box {
-  width: 50%;
+  width: 18rem;
 }
 
 li {
@@ -30,8 +30,32 @@ li {
   font-size: 0.875rem;
 }
 
-
 img {
   width: 200px;
   padding: 0.30rem 0rem;
 }
+
+/* Services page */
+
+.container-cards {
+  display: flex;
+  flex-direction: row;
+}
+
+.card-1 {
+  width: 50%;
+}
+
+
+/* Titles */
+
+.title-page {
+  padding: 2rem 0rem;
+  color: rgb(27, 28, 39);
+}
+
+.subtitle-services {
+  font-size: 22px;
+  font-weight: 600;
+}
+
