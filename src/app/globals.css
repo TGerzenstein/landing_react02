@@ -37,15 +37,10 @@ img {
 
 /* Services page */
 
-.container-cards {
-  display: flex;
-  flex-direction: row;
-}
 
-.card-1 {
-  width: 50%;
+.content-text {
+  width: 60%;
 }
-
 
 /* Titles */
 
