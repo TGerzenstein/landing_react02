@@ -1,6 +1,9 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Navigation from '/components/Navigation';
+import Header from '/components/Header';
+
+
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,12 +20,13 @@ export default function RootLayout({ children }) {
               href="https://bootswatch.com/5/sandstone/bootstrap.min.css" />
       </head>
       <body className={inter.className}>
-        
-        <Navigation />
-        <div className="container">
-          {children}          
-        </div>  
+        <Header />
+        <main>
+          {children}
+        </main>
+
       </body>
     </html>
   );
 }
+
