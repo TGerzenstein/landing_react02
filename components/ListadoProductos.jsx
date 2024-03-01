@@ -9,10 +9,11 @@ async function ListadoProductos() {
     <section>
       <article className='container-products'>
         {productos.map((item) => (
+          
           <div  className='card-product' key={item.id}>
             <img src={item.thumbnail} alt={item.title}/>
                 <div className='info-product'>
-                  <h2 className='title-product'>{item.title}</h2>
+                <a className="an"href=""><h2 className='title-product'>{item.title}</h2></a>
                   <p className='price'>${item.price}</p>
                 </div>
           </div>
