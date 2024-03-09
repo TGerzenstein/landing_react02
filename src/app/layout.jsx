@@ -3,8 +3,6 @@ import "./globals.css";
 import Header from '/components/Header';
 
 
-
-
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -16,11 +14,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <link rel="stylesheet" 
-              href="https://bootswatch.com/5/sandstone/bootstrap.min.css" />
+
       </head>
       <body className={inter.className}>
-        <Header />
         <main>
           {children}
         </main>
