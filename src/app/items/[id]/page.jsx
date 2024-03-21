@@ -1,34 +1,45 @@
 "use client"
 import { useEffect, useState } from "react";
+import ProductDescriptionText from "../../../../components/ProductDescriptionText";
 
 
-function TestPage({ params }) {
-    const [ productDetails, setProductDetails] = useState({});
+export default function SearchId({ params }) {
+  const [ productDetails, setProductDetails] = useState("");
 
-
-    async function fetchData() {
-        const props = `https://api.mercadolibre.com/items/${params.id}`
-        const res = await fetch(props)
-        const entry = await res.json();      
+  async function fetchData() {
+      const props = `https://api.mercadolibre.com/items/${params.id}`
+      const res = await fetch(props)
+      const entry = await res.json();      
         
-        setProductDetails(entry);
-    }
+      setProductDetails(entry);
+  }
 
-    useEffect(() => {
-         fetchData();
-    }, []);
+  useEffect(() => {
+      fetchData();
+  }, []);
 
-    return (
-            <section className='section-producto'>
-                <div className='product-container'>
-                    <img src={productDetails.thumbnail} alt={productDetails.title} className='img-product'/>
-                    <div className='product'>
-                        <p className='product-title'>{productDetails.title}</p>
-                        <p  className='product-price'>${productDetails.price}</p>
-                    </div>
-                </div>
-            </section>
-    );
+
+  return (
+      <section className='section-product'>
+        <div className="container">
+          <div className='product-container'>
+              <div className="box-1">
+                <img src={productDetails.thumbnail} alt={productDetails.title} className='img-product'/>
+              </div>
+              <div className="box-3">
+                <div className="line-product"></div>
+                <ProductDescriptionText productId={params.id} />
+              </div>
+          </div>
+          <div className='banner'>
+            <div className='box-2'>
+                  <p className="condition-product">{productDetails.condition}</p> 
+                  <p className='product-title'>{productDetails.title}</p>
+                  <p  className='product-price'>$ {Intl.NumberFormat("de-DE").format(productDetails.price)}{" "} {productDetails.currency_id}</p>
+                  <p className="options">Ver los medios de pagos</p>
+            </div>    
+          </div>
+        </div>
+      </section>
+  );
 }
-
-export default TestPage;
