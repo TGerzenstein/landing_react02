@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import './SearchComponent.css';
 
 
 export default function SearchComponent({ searchText }) {
@@ -11,7 +12,6 @@ export default function SearchComponent({ searchText }) {
     const respuesta = await fetch(url) 
     const data = await respuesta.json();
  
-    console.log("mostrar:", data.results)
     setProductos(data.results);
   }
 

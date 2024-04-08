@@ -1,6 +1,6 @@
 "use client";
 import { useState } from 'react';
-
+import './Header.css';
 
 function Header({ searchText, handleSearch }) {
   const [inputSearch, setInputSearch] = useState("");
@@ -19,8 +19,8 @@ function Header({ searchText, handleSearch }) {
 
   return (
     <div>
-        <header>
-          <form onSubmit={handleSubmit}>
+        <header className='header-project'>
+          <form className='header-form' onSubmit={handleSubmit}>
             <input type="text" 
                 name='search'
                 placeholder='Search'
