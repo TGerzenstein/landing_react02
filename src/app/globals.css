@@ -22,12 +22,17 @@ body {
   border: 1px solid rgba(0,0,0,.1);
   border-radius: 8px;
   background-color: #fff;
+  width: auto;
 }
 
 .box-1 {
-  width: auto;
+  width: 100%;
   height: auto;
-  padding: 5px 15px;
+  padding: 5px 2px;
+}
+
+.carousel-img {
+  width: auto;
 }
 
 .box-2 {
@@ -64,6 +69,7 @@ body {
 .box-3 {
   padding: 1rem;
   height: 500px;
+  width: 100%;
   overflow: scroll;
 }
 
@@ -108,6 +114,10 @@ body {
     width: 60%;
     height: auto;
     padding: 0px 22px;
+  }
+
+  .slick-slider {
+    margin-bottom: 10px;
   }
 
 
