@@ -8,11 +8,11 @@ export default function SearchId({ params }) {
   const [ productDetails, setProductDetails] = useState("");
 
   async function fetchData() {
-      const props = `https://api.mercadolibre.com/items/${params.id}`
-      const res = await fetch(props)
-      const entry = await res.json();      
+      const url = `https://api.mercadolibre.com/items/${params.id}`
+      const response = await fetch(url)
+      const data = await response.json();      
         
-      setProductDetails(entry);
+      setProductDetails(data);
   }
 
   useEffect(() => {

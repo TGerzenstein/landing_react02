@@ -11,11 +11,11 @@ export default function SimpleSlider({ productId }) {
 
 
     async function fetchData() {
-        const props = `https://api.mercadolibre.com/items/${productId}`
-        const res = await fetch(props)
-        const entry = await res.json();      
-        
-        setImageCarousel(entry.pictures);
+        const url = `https://api.mercadolibre.com/items/${productId}`
+        const response = await fetch(url)
+        const data = await response.json();  
+                
+        setImageCarousel(data.pictures);
     }
 
 
@@ -26,11 +26,13 @@ export default function SimpleSlider({ productId }) {
 
     var settings = {
       dots: true,
-      infinite: true,
+      infinite: false,
       speed: 500,
       slidesToShow: 1,
       slidesToScroll: 1,
+      arrows: false,
     };
+
 
     return (
       <Slider {...settings} >

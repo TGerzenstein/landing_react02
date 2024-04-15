@@ -6,11 +6,11 @@ export default function ProductDescriptionText({ productId }) {
   const [ description, setDescription] = useState([])
 
   async function fetchData() {
-    const props = `https://api.mercadolibre.com/items/${productId}/description`
-    const res = await fetch(props)
-    const entry = await res.json();      
+    const url = `https://api.mercadolibre.com/items/${productId}/description`
+    const response = await fetch(url)
+    const data = await response.json();      
 
-    setDescription(entry);
+    setDescription(data);
   }
 
   useEffect(() => {

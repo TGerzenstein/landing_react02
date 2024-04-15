@@ -19,7 +19,6 @@ export default function SearchComponent({ searchText }) {
   useEffect(() => {
     showData(searchText);
   }, [searchText])
-  console.log("componente ejecutado");
 
 
   return (

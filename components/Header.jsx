@@ -8,8 +8,6 @@ function Header({ searchText, handleSearch }) {
   function handleSubmit(event) {
     event.preventDefault();
     handleSearch(inputSearch);
-
-    console.log("Producto buscado:", searchText);
   }
 
   function handleChange(event) {
