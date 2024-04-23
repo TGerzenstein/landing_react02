@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 
 export default function ProductDescriptionText({ productId }) {
 
-  const [ description, setDescription] = useState([])
+  const [ description, setDescription ] = useState([])
 
   async function fetchData() {
     const url = `https://api.mercadolibre.com/items/${productId}/description`

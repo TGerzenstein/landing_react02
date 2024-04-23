@@ -5,7 +5,7 @@ import './SearchComponent.css';
 
 export default function SearchComponent({ searchText }) {
   
-  const [ productos, setProductos ] = useState([]);
+  const [ products, setProductos ] = useState([]);
   
   async function showData(searchText) {
     const url = `https://api.mercadolibre.com/sites/MLA/search?q=${searchText}`
@@ -24,7 +24,7 @@ export default function SearchComponent({ searchText }) {
   return (
     <section>
       <article className='container-products'>
-        {productos.map((item) => (
+        {products.map((item) => (
           <Link className='card-product' key={item.id} href={`/items/${item.id}`}>
             <img src={item.thumbnail} alt={item.title}/>
                 <div className='line'></div>
