@@ -22,8 +22,30 @@ export default function SearchId({ params }) {
 
 
   return (
-      <section className='section-product'>
-        <div className="container">
+      <section className='container section-product'>
+        <div className="row container-product">
+          <div className="col-sm-6 col-md-6 col-lg-6 box-1">
+            <Carousel productId={params.id}/>
+          </div>
+          <div className="col-sm-6 col-md-6 col-lg-6 box-2">
+            <p className="condition-product">{productDetails.condition}</p> 
+            <p className='product-title'>{productDetails.title}</p>
+            <p  className='product-price'>$ {Intl.NumberFormat("de-DE").format(productDetails.price)}{" "} {productDetails.currency_id}</p>
+            <p className="options">Ver los medios de pagos</p>
+          </div>
+        </div>
+        <div className="col-sm-6 col-md-6 col-lg-6 box-3">
+            <div className="line-product"></div>
+            <ProductDescriptionText productId={params.id} />
+        </div>
+      </section>
+  );
+}
+
+
+
+/*
+ <div className="container-product">
             <div className="box-1">
               <Carousel productId={params.id}/>
             </div>
@@ -38,6 +60,4 @@ export default function SearchId({ params }) {
               <ProductDescriptionText productId={params.id} />
             </div>
         </div>
-      </section>
-  );
-}
+        */

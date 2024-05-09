@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import './SearchComponent.css';
+import Card from 'react-bootstrap/Card';
 
 
 export default function SearchComponent({ searchText }) {
@@ -13,6 +14,7 @@ export default function SearchComponent({ searchText }) {
     const data = await respuesta.json();
  
     setProductos(data.results);
+    console.log("- componente ejecutado")
   }
 
 
@@ -22,22 +24,22 @@ export default function SearchComponent({ searchText }) {
 
 
   return (
-    <section>
-      <article className='container-products'>
-        {products.map((item) => (
-          <Link className='card-product' key={item.id} href={`/items/${item.id}`}>
-            <img src={item.thumbnail} alt={item.title}/>
-                <div className='line'></div>
-                <div className='info-product'>
-                <p className='condition'>{item.condition}</p>
-                <a className="an" href=""><h2 className='title-product'>{item.title}</h2></a>
-                  <p className='price'>$ {Intl.NumberFormat("de-DE").format(item.price)}{" "} {item.currency_id}</p>
-                  <p className='title-stock'>Stock disponible</p>
-                  <p className='stock'>Cantidad: {item.available_quantity}</p>
-                </div>
-          </Link>
-        ))}
-      </article>
+    <section className='container-products container border-0'>
+      {products.map((item) => (
+          <Card className='card-product p-2 m-2'>
+            <Link key={item.id} href={`/items/${item.id}`}>
+            <Card.Img variant="top" src={item.thumbnail} alt={item.title}/>
+            <div className='line'></div>
+            <Card.Body className='info-product'>
+              <Card.Title className='condition'>{item.condition}</Card.Title>
+              <Card.Title className="an title-product">{item.title}</Card.Title>
+              <Card.Text className='price'>$ {Intl.NumberFormat("de-DE").format(item.price)}{" "} {item.currency_id}</Card.Text>
+              <Card.Text className='title-stock'>Stock disponible</Card.Text>
+              <Card.Text className='stock'>Cantidad: {item.available_quantity}</Card.Text>
+            </Card.Body>
+            </Link>
+          </Card>
+      ))}
     </section>
   )
 }

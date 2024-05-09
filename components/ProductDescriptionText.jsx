@@ -11,6 +11,7 @@ export default function ProductDescriptionText({ productId }) {
     const data = await response.json();      
 
     setDescription(data);
+    console.log("- - componente ejecutado")
   }
 
   useEffect(() => {
