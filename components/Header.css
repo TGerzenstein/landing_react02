@@ -53,3 +53,16 @@
   }    
 }
 
+
+/* Estilos para tablets (small y medium) */
+@media (min-width: 576px) and (max-width: 991.98px) {
+
+    .header-form {
+        width: 100%;
+    }
+
+    .input-form {
+        width: 56%;
+    }
+}
+

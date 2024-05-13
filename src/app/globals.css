@@ -13,6 +13,8 @@ body {
 .section-product {
   background-color: #f7f7f7;
   width: 100%;
+  border: 1px solid #f7f7f7;
+  border-radius: 8px;
 }
 
 .container-product {
